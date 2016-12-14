@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vms="clr-namespace:LagoVista.PoolController;assembly=LagoVista.PoolController"
+             BindingContext="{Binding Source={x:Static vms:ViewModelLocator.MainViewModel}}"
+             x:Class="LagoVista.PoolController.Views.MainPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="LabelStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Gray" />
+      </Style>
+      <Style x:Key="ValueStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+      <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="10,10,10,10" />
+        <Setter Property="BackgroundColor" Value="Blue" />
+      </Style>
+
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <Grid HorizontalOptions="Center" VerticalOptions="Center">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <RowDefinition Height="auto" />
+    </Grid.RowDefinitions>
+    <Grid>
+      <Button Text="Refreh"  Command="{Binding RefreshCommand}" Style="{StaticResource ButtonStyle}" />
+    </Grid>
+    <Grid Grid.Row="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+        <RowDefinition Height="auto" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="200"/>
+        <ColumnDefinition Width="100"/>
+      </Grid.ColumnDefinitions>
+      <Label Text="Heater Mode" Grid.Column="0"  Style="{StaticResource LabelStyle}" />
+      <Label Text="{Binding Pool.Mode}" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+      <Label Text="Temperature" Grid.Row="1" Style="{StaticResource LabelStyle}" />
+      <Label Text="{Binding Pool.Temperature}" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+
+      <Label Text="Flow Status" Grid.Row="2" Style="{StaticResource LabelStyle}"/>
+      <Label Text="{Binding Pool.FlowStatus}" HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+      <Label Text="Low Pressure Status" Grid.Row="3" Style="{StaticResource LabelStyle}"/>
+      <Label Text="{Binding Pool.LowPressureStatus}" HorizontalOptions="Center" Grid.Row="3" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+      <Label Text="High Pressure Status" Grid.Row="4" Style="{StaticResource LabelStyle}"/>
+      <Label Text="{Binding Pool.HighPressureStatus}" HorizontalOptions="Center" Grid.Row="4" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+
+      <Label Text="Spa Setpoint" Grid.Row="5" Style="{StaticResource LabelStyle}"/>
+      <Label Text="{Binding Pool.SpaSetpoint}" HorizontalOptions="Center" Grid.Row="5" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+      <Label Text="Pool Setpoint" Grid.Row="6" Style="{StaticResource LabelStyle}"/>
+      <Label Text="{Binding Pool.PoolSetpoint}" HorizontalOptions="Center" Grid.Row="6" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+
+      <Label Text="Pump Output" Grid.Row="7" Style="{StaticResource LabelStyle}"/>
+      <Label Text="{Binding Pool.Output}" HorizontalOptions="Center" Grid.Row="7" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+      <Label Text="Initial Source" Grid.Row="8" Style="{StaticResource LabelStyle}"/>
+      <Label Text="{Binding Pool.Source}" HorizontalOptions="Center" Grid.Row="8" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+      <Label Text="Spa Mode" Grid.Row="9" Style="{StaticResource LabelStyle}"/>
+      <Label Text="{Binding Pool.SpaMode}" HorizontalOptions="Center" Grid.Row="9" Grid.Column="1" Style="{StaticResource ValueStyle}"/>
+    </Grid>
+  </Grid>
+</ContentPage>
